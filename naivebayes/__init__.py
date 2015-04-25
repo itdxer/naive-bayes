@@ -5,11 +5,7 @@ from sklearn.feature_extraction.text import CountVectorizer
 class NaiveBayesTextClassifier(object):
     def __init__(self, categories, **kwargs):
         self.categories = categories
-        self.vectorizer = CountVectorizer(
-            min_df=1,
-            lowercase=True,
-            **kwargs
-        )
+        self.vectorizer = CountVectorizer(**kwargs)
 
         # Will populate this variables in `train` method
         self.bag = None
@@ -48,7 +44,6 @@ class NaiveBayesTextClassifier(object):
                 "Your bag is empty. Train it before classify."
             )
 
-        categories = self.categories
         total_docs = len(documents)
         categories = self.categories
         vectorizer = self.vectorizer

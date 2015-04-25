@@ -67,6 +67,8 @@ train_docs, test_docs, train_classes, test_classes = train_test_split(
 print("Train classifier")
 classifier = NaiveBayesTextClassifier(
     categories=categories,
+    min_df=1,
+    lowercase=True,
     # 127 English stop words
     stop_words=stopwords.words('english')
 )

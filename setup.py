@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name="naive-bayes",
-    version="0.1.0",
+    version="0.1.1",
     author="Yurii Shevchuk",
     author_email="mail@itdxer.com",
     keywords="naive bayes text classification classifier",
