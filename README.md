@@ -37,6 +37,14 @@ $ pip install -r requirements.txt
 
 And run some example
 
+### Usenet 20 newsgroup
+
 ```bash
 $ python 20newsgroup
+```
+
+### Kaggle IMDB reviews competition
+
+```bash
+$ python imdb_reviews
 ```

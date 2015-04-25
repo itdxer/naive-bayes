@@ -11,9 +11,10 @@ from sklearn.cross_validation import train_test_split
 from naivebayes import NaiveBayesTextClassifier
 
 
-print("Start donwload 20 NewsGroup data")
+print("> Start donwload 20 NewsGroup data")
 DATASET_URL = "http://qwone.com/~jason/20Newsgroups/20news-18828.tar.gz"
-DATA_DIR = "/tmp/data"
+BASEDIR = os.path.dirname(os.path.abspath(__file__))
+DATA_DIR = os.path.join(BASEDIR, "data")
 
 archive_name = DATASET_URL.split('/')[-1]
 archive_path = os.path.join(DATA_DIR, archive_name)
@@ -53,18 +54,18 @@ def get_texts(categories):
 
     return documents, classes
 
-print("Read files...")
+print("> Read files...")
 start_time = time.time()
 categories = os.listdir(path_to_data)
 
 # Get data
-print("Split data to test and train")
+print("> Split data to test and train")
 documents, classes = get_texts(categories)
 train_docs, test_docs, train_classes, test_classes = train_test_split(
     documents, classes, train_size=0.7
 )
 
-print("Train classifier")
+print("> Train classifier")
 classifier = NaiveBayesTextClassifier(
     categories=categories,
     min_df=1,
@@ -85,7 +86,7 @@ print("{:<25}: {:>6.2f} seconds".format(
 print("-" * 42)
 
 start_time = time.time()
-print("Start classify test data")
+print("> Start classify test data")
 predicted_classes = classifier.classify(test_docs)
 end_time = time.time()
 
