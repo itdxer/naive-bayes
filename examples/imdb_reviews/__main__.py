@@ -115,7 +115,7 @@ if options.test:
 
 elif options.predict:
     predicted_classes = classifier.classify(test_data.review)
-    
+
     print("> Save predicted results")
     print("> {}".format(PREDICTED_DATA_FILE))
     np.savetxt(
