@@ -1,4 +1,4 @@
-nltk==3.0.2
+nltk==3.4.5
 scikit-learn==0.15.2
 skll==1.0.1
 naive-bayes==0.1.0
