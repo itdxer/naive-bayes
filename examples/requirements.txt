@@ -3,4 +3,4 @@ scikit-learn==0.15.2
 skll==1.0.1
 naive-bayes==0.1.0
 pandas==0.16.0
-numpy==1.9.0
+numpy==1.21.0
